@@ -1,0 +1,17 @@
+任务：对简历做“诊断报告”，给出问题与可执行建议，并结合目标岗位做匹配分析。
+
+要求：
+- overallScore 综合考虑 ATS、岗位匹配、清晰度、可信度。
+- missingKeywords 只列出“目标岗位描述里出现但简历未覆盖/未明确”的关键词或技能。
+- strengths 列出简历已有的亮点。
+- clarificationQuestions 用于让候选人补关键信息（最多 10 条）。
+- rawModelText 固定输出空字符串。
+
+语言偏好：中文
+
+目标岗位标题：{targetJobTitle}
+目标岗位描述：{targetJobDescription}
+
+候选人简历原文：
+{resumeText}
+

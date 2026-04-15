@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: ai-cv-optimize
+  main:
+    allow-bean-definition-overriding: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: jdbc:postgresql://lijianpan.pg.polardb.rds.aliyuncs.com:5432/ai-cv-optimize
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  ai:
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen-plus-2025-12-01
+  vectorstore:
+    pgvector:
+      dimensions: 1536
+      index-type: hnsw
+      distance-type: cosine_distance
+
+logging:
+  level:
+    root: info
+
+app:
+  output-dir: ./output/resumes
+  jwt:
+    secret: ${JWT_SECRET:Y2hhbmdlVGhpc1RvQVNlY3VyZUJhc2U2NEVuY29kZWRTZWNyZXRLZXlGb3JKV1RUb2tlbjI1NkJpdHM=}
+    expiration: 86400000
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

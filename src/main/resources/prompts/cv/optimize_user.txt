@@ -1,0 +1,26 @@
+任务：在“不编造事实”的前提下，把简历改写成更匹配岗位、更 ATS 友好、更量化、更清晰的版本。
+输出 JSON Schema（字段必须齐全）：
+{
+  "optimizedResume": "string",
+  "changes": [
+    {"section":"...","before":"...","after":"...","rationale":"..."}
+  ],
+  "tailoredKeywords": ["..."],
+  "clarificationQuestions": ["..."],
+  "rawModelText": ""
+}
+要求：
+- optimizedResume：按 {outputFormat} 输出（markdown 或 text）。优先用清晰的分节：个人信息(可选)、个人总结、核心技能、工作经历、项目经历、教育、证书/奖项(如有)。
+- changes：挑选最关键的 6-12 条改动，before/after 必须来自"原文或其等价改写"，不能新增事实。
+- tailoredKeywords：从目标岗位描述中提取，并在优化简历中尽可能自然覆盖（但不能硬塞不存在的技能）。
+- clarificationQuestions：列出为了进一步提升匹配度需要补充的信息（最多 10 条）。
+- rawModelText 固定输出空字符串。
+
+语言偏好：{language}
+
+目标岗位标题：{targetJobTitle}
+目标岗位描述：{targetJobDescription}
+
+候选人简历原文：
+{resumeText}
+
