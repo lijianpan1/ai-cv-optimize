@@ -83,16 +83,6 @@ mvn spring-boot:run
 
 后端服务默认运行在 http://localhost:8080
 
-## 前端启动
-
-```bash
-cd ai-cv-optimize-web
-npm install
-npm run dev
-```
-
-前端开发服务器运行在 http://localhost:5173
-
 ## API 接口文档
 
 ### 认证接口
