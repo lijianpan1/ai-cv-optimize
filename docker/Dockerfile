@@ -1,5 +1,5 @@
 # 使用 Eclipse Temurin Java 21 作为基础镜像
-FROM registry.aliyuncs.com/eclipse-temurin:21-jre-alpine
+FROM registry.cn-hangzhou.aliyuncs.com/library/eclipse-temurin:21-jre-alpine
 
 # 设置工作目录
 WORKDIR /app
