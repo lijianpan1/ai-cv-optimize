@@ -9,7 +9,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 复制 JAR 文件到容器中
-COPY target/ai-cv-optimize-0.0.1-SNAPSHOT.jar app.jar
+COPY ../target/ai-cv-optimize-0.0.1-SNAPSHOT.jar app.jar
 
 # 暴露应用端口
 EXPOSE 8080
